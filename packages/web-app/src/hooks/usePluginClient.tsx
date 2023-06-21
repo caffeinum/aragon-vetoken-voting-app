@@ -6,6 +6,7 @@ import {
 import {useEffect, useState} from 'react';
 
 import {useClient} from './useClient';
+import {getFavoritedDaoFromCache} from '../services/cache';
 
 export type PluginTypes =
   | 'token-voting.plugin.dao.eth'
@@ -63,7 +64,10 @@ export const usePluginClient = <T extends PluginTypes = PluginTypes>(
           );
           break;
         default:
-          throw new Error('The requested plugin type is invalid');
+          // throw new Error('The requested plugin type is invalid');
+          setPluginClient(
+            new TokenVotingClient(ContextPlugin.fromContext(context))
+          );
       }
     }
   }, [client, context, pluginType]);
