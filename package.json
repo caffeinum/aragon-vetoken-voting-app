@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "yarn --cwd packages/web-app start",
-    "build": "yarn workspaces run build"
+    "build": "yarn --cwd packages/ui-components build && yarn --cwd packages/web-app build"
   },
   "workspaces": {
     "packages": [
