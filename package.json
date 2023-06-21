@@ -6,6 +6,9 @@
   "author": "Aragon Association",
   "license": "GNU",
   "private": true,
+  "scripts": {
+    "build": "cd packages/ui-components && yarn build && cd ../web-app && yarn build"
+  },
   "workspaces": {
     "packages": [
       "packages/*"

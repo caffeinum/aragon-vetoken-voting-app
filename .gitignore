@@ -49,3 +49,4 @@ packages/web-app/tests/e2e/videos/*
 
 .idea
 
+.vercel
